@@ -15,7 +15,8 @@ class WhiskerImprover : public ActionImprover< WhiskerTree, Whisker >
 protected:
   WhiskerImproverOptions _options;
 
-  std::vector< Whisker > get_replacements( Whisker & action_to_improve );
+  
+  std::vector< Whisker > get_replacements( Whisker & action_to_improve ) override;
 
 public:
   WhiskerImprover( const Evaluator<  WhiskerTree > & evaluator, const WhiskerTree & rat, const WhiskerImproverOptions & options,
@@ -31,7 +32,7 @@ private:
 
 public:
   RatBreeder( const BreederOptions & s_options, const WhiskerImproverOptions & s_whisker_options ) 
-    : Breeder( s_options ), _whisker_options( s_whisker_options ) {};
+    :/*Calling constructor of Breeder before the body*/ Breeder( s_options ), /*Calling constructor of WhiskerImprovementOptions before the body*/ _whisker_options( s_whisker_options ) {};
 
   Evaluator< WhiskerTree >::Outcome improve( WhiskerTree & whiskers );
 };

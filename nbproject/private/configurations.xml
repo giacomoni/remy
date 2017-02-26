@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="100">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <df root="." name="0">
+      <df name="autom4te.cache">
+      </df>
+      <df name="debian">
+        <df name="source">
+        </df>
+      </df>
+      <df name="graph">
+        <df name=".deps">
+        </df>
+        <in>bb100.hh</in>
+        <in>cairo_objects.cc</in>
+        <in>cairo_objects.hh</in>
+        <in>display.cc</in>
+        <in>display.hh</in>
+        <in>fader-templates.cc</in>
+        <in>fader.cc</in>
+        <in>fader.hh</in>
+        <in>gl_objects.cc</in>
+        <in>gl_objects.hh</in>
+        <in>graph.cc</in>
+        <in>graph.hh</in>
+        <in>image.cc</in>
+        <in>image.hh</in>
+        <in>ratatouille.cc</in>
+      </df>
+      <df name="protobufs">
+        <df name=".deps">
+        </df>
+        <in>answer.pb.cc</in>
+        <in>answer.pb.h</in>
+        <in>dna.pb.cc</in>
+        <in>dna.pb.h</in>
+        <in>problem.pb.cc</in>
+        <in>problem.pb.h</in>
+        <in>simulationresults.pb.cc</in>
+        <in>simulationresults.pb.h</in>
+      </df>
+      <df name="scripts">
+        <df name="originals">
+        </df>
+      </df>
+      <df name="src">
+        <df name=".deps">
+        </df>
+        <df name="test">
+        </df>
+        <in>action.hh</in>
+        <in>aimd-templates.cc</in>
+        <in>aimd.cc</in>
+        <in>aimd.hh</in>
+        <in>breeder.cc</in>
+        <in>breeder.hh</in>
+        <in>configrange.cc</in>
+        <in>configrange.hh</in>
+        <in>delay.hh</in>
+        <in>evaluator.cc</in>
+        <in>evaluator.hh</in>
+        <in>exponential.hh</in>
+        <in>fin.cc</in>
+        <in>fin.hh</in>
+        <in>fintree.cc</in>
+        <in>fintree.hh</in>
+        <in>fish-templates.cc</in>
+        <in>fish.cc</in>
+        <in>fish.hh</in>
+        <in>fishbreeder.cc</in>
+        <in>fishbreeder.hh</in>
+        <in>input-configrange.cc</in>
+        <in>inspect-configrange.cc</in>
+        <in>inspect-simulationsdata.cc</in>
+        <in>link-templates.cc</in>
+        <in>link.hh</in>
+        <in>memory.cc</in>
+        <in>memory.hh</in>
+        <in>memoryrange.cc</in>
+        <in>memoryrange.hh</in>
+        <in>network.cc</in>
+        <in>network.hh</in>
+        <in>packet.hh</in>
+        <in>poisson.hh</in>
+        <in>random.cc</in>
+        <in>random.hh</in>
+        <in>rat-templates.cc</in>
+        <in>rat.cc</in>
+        <in>rat.hh</in>
+        <in>ratbreeder.cc</in>
+        <in>ratbreeder.hh</in>
+        <in>receiver.cc</in>
+        <in>receiver.hh</in>
+        <in>remy-poisson.cc</in>
+        <in>remy.cc</in>
+        <in>scoring-example.cc</in>
+        <in>sender-logger.cc</in>
+        <in>sender-runner.cc</in>
+        <in>senderdatapoint.hh</in>
+        <in>sendergang.cc</in>
+        <in>sendergang.hh</in>
+        <in>sendergangofgangs.cc</in>
+        <in>sendergangofgangs.hh</in>
+        <in>simulationresults.cc</in>
+        <in>simulationresults.hh</in>
+        <in>stochastic-loss.hh</in>
+        <in>utility.hh</in>
+        <in>whisker.cc</in>
+        <in>whisker.hh</in>
+        <in>whiskertree.cc</in>
+        <in>whiskertree.hh</in>
+      </df>
+      <df name="tests">
+      </df>
+      <in>config.h</in>
+    </df>
+  </logicalFolder>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Default" type="0">
+      <toolsSet>
+        <developmentServer>localhost</developmentServer>
+        <platform>4</platform>
+      </toolsSet>
+      <compile>
+        <compiledirpicklist>
+          <compiledirpicklistitem>.</compiledirpicklistitem>
+          <compiledirpicklistitem>${AUTO_FOLDER}</compiledirpicklistitem>
+        </compiledirpicklist>
+        <compiledir>${AUTO_FOLDER}</compiledir>
+        <compilecommandpicklist>
+          <compilecommandpicklistitem>${MAKE} ${ITEM_NAME}.o</compilecommandpicklistitem>
+          <compilecommandpicklistitem>${AUTO_COMPILE}</compilecommandpicklistitem>
+        </compilecommandpicklist>
+        <compilecommand>${AUTO_COMPILE}</compilecommand>
+      </compile>
+      <dbx_gdbdebugger version="1">
+        <gdb_pathmaps>
+        </gdb_pathmaps>
+        <gdb_interceptlist>
+          <gdbinterceptoptions gdb_all="false" gdb_unhandled="true" gdb_unexpected="true"/>
+        </gdb_interceptlist>
+        <gdb_options>
+          <DebugOptions>
+          </DebugOptions>
+        </gdb_options>
+        <gdb_buildfirst gdb_buildfirst_overriden="false" gdb_buildfirst_old="false"/>
+      </dbx_gdbdebugger>
+      <nativedebugger version="1">
+        <engine>gdb</engine>
+      </nativedebugger>
+      <runprofile version="9">
+        <runcommandpicklist>
+          <runcommandpicklistitem>"${OUTPUT_PATH}"</runcommandpicklistitem>
+        </runcommandpicklist>
+        <runcommand>"${OUTPUT_PATH}"</runcommand>
+        <rundir>.</rundir>
+        <buildfirst>false</buildfirst>
+        <terminal-type>0</terminal-type>
+        <remove-instrumentation>0</remove-instrumentation>
+        <environment>
+        </environment>
+      </runprofile>
+    </conf>
+  </confs>
+</configurationDescriptor>

@@ -17,10 +17,10 @@ Evaluator< WhiskerTree >::Outcome RatBreeder::improve( WhiskerTree & whiskers )
   while ( generation < 5 ) {
     const Evaluator< WhiskerTree > eval( _options.config_range );
 
-    auto outcome( eval.score( whiskers ) );
+    Evaluator<WhiskerTree>::Outcome outcome( eval.score( whiskers ) );
 
     /* is there a whisker at this generation that we can improve? */
-    auto most_used_whisker_ptr = outcome.used_actions.most_used( generation );
+    auto most_used_whisker_ptr = outcome.used_actions.most_used( generation ); //CHECK: is this the correct algorithm to extract the most used rule?
 
     /* if not, increase generation and promote all whiskers */
     if ( !most_used_whisker_ptr ) {

@@ -10,7 +10,7 @@
 #include "memory.hh"
 #include "simulationresults.pb.h"
 
-class Rat
+class Rat //TCP using RemyCC
 {
 private:
   const WhiskerTree & _whiskers;

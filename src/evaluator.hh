@@ -48,11 +48,11 @@ public:
 
   static Evaluator::Outcome parse_problem_and_evaluate( const ProblemBuffers::Problem & problem );
 
-  static Outcome score( T & run_actions,
+  static Evaluator::Outcome score( T & run_actions,
 			const unsigned int prng_seed,
 			const std::vector<NetConfig> & configs,
 			const bool trace,
-			const unsigned int ticks_to_run );
+		  	const unsigned int ticks_to_run );
 };
 
 #endif

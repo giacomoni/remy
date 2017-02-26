@@ -47,6 +47,8 @@ ActionImprover< T, A >::ActionImprover( const Evaluator< T > & s_evaluator,
     score_to_beat_( score_to_beat )
 {}
 
+
+//ROUTINE TO EVALUATE ALL THE POSSIBLE CHANGES IN THE ACTION PARAMETERS
 template <typename T, typename A>
 void ActionImprover< T, A >::evaluate_replacements(const vector<A> &replacements,
     vector< pair< const A &, future< pair< bool, double > > > > &scores,
@@ -56,7 +58,7 @@ void ActionImprover< T, A >::evaluate_replacements(const vector<A> &replacements
     if ( eval_cache_.find( test_replacement ) == eval_cache_.end() ) {
       /* need to fire off a new thread to evaluate */
       scores.emplace_back( test_replacement,
-                           async( launch::async, [] ( const Evaluator< T > & e,
+                           std::async( std::launch::async, [] ( const Evaluator< T > & e,
                                                       const A & r,
                                                       const T & tree,
                                                       const double carefulness ) {
@@ -113,7 +115,7 @@ template <typename T, typename A>
 double ActionImprover< T, A >::improve( A & action_to_improve )
 {
   auto replacements = get_replacements( action_to_improve );
-  vector< pair< const A &, future< pair< bool, double > > > > scores;
+  vector< pair< const A &, future< pair< bool, double > > > > scores; //here future is used for synchronization of threads
 
   /* Run for 10% simulation time to get estimates for the final score 
      and discard bad performing ones early on. */

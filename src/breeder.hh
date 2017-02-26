@@ -11,7 +11,7 @@
 
 struct BreederOptions
 {
-  ConfigRange config_range = ConfigRange();
+  ConfigRange config_range = ConfigRange();   
 };
 
 template <typename T, typename A>
@@ -23,7 +23,7 @@ protected:
 
   T tree_;
 
-  std::unordered_map< A, double, boost::hash< A > > eval_cache_ {};
+  std::unordered_map< A, double, boost::hash< A > > eval_cache_ ({});
 
   double score_to_beat_;
 

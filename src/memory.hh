@@ -7,6 +7,8 @@
 #include "packet.hh"
 #include "dna.pb.h"
 
+typedef RemyBuffers::MemoryRange::Axis Axis;
+
 class Memory {
 public:
   typedef double DataType;
@@ -47,6 +49,8 @@ public:
       _last_tick_received( 0 ),
       _min_rtt( 0 )
   {}
+  
+   Memory( const bool is_lower_limit, const RemyBuffers::Memory & dna );
 
   void reset( void ) { _rec_send_ewma = _rec_rec_ewma = _rtt_ratio = _slow_rec_rec_ewma = _rtt_diff = _queueing_delay = _last_tick_sent = _last_tick_received = _min_rtt = 0; }
 
@@ -54,10 +58,13 @@ public:
 
   const DataType & field( unsigned int num ) const { return num == 0 ? _rec_send_ewma : num == 1 ? _rec_rec_ewma : num == 2 ? _rtt_ratio : num == 3 ? _slow_rec_rec_ewma : num == 4 ? _rtt_diff : _queueing_delay ; }
   DataType & mutable_field( unsigned int num )     { return num == 0 ? _rec_send_ewma : num == 1 ? _rec_rec_ewma : num == 2 ? _rtt_ratio : num == 3 ? _slow_rec_rec_ewma : num == 4 ? _rtt_diff : _queueing_delay ; }
+  
+  DataType & mutable_field( Axis num )     { return num == RemyBuffers::MemoryRange::SEND_EWMA ? _rec_send_ewma : num == RemyBuffers::MemoryRange::REC_EWMA ? _rec_rec_ewma : num == RemyBuffers::MemoryRange::RTT_RATIO ? _rtt_ratio : num == RemyBuffers::MemoryRange::SLOW_REC_EWMA ? _slow_rec_rec_ewma : num == RemyBuffers::MemoryRange::RTT_DIFF ? _rtt_diff : _queueing_delay ; }
+  
 
-  void packet_sent( const Packet & packet __attribute((unused)) ) {}
+  void packet_sent( const Packet & packet __attribute__((unused)) ) {} //Method not implemented
   void packets_received( const std::vector< Packet > & packets, const unsigned int flow_id, const int largest_ack );
-  void advance_to( const unsigned int tickno __attribute((unused)) ) {}
+  void advance_to( const unsigned int tickno __attribute__((unused)) ) {} //Method not implemented
 
   std::string str( void ) const;
   std::string str( unsigned int num ) const;
@@ -76,7 +83,7 @@ public:
   }
 
   RemyBuffers::Memory DNA( void ) const;
-  Memory( const bool is_lower_limit, const RemyBuffers::Memory & dna );
+ 
 
   friend size_t hash_value( const Memory & mem );
 };

@@ -31,6 +31,8 @@ public:
     std::vector< Axis > s_active = { RemyBuffers::MemoryRange::SEND_EWMA, RemyBuffers::MemoryRange::REC_EWMA, RemyBuffers::MemoryRange::RTT_RATIO, RemyBuffers::MemoryRange::SLOW_REC_EWMA } )
     : _lower( s_lower ), _upper( s_upper ), _active_axis( s_active ), _acc( Memory::datasize ), _count( 0 )
   {}
+  
+  MemoryRange( const RemyBuffers::MemoryRange & dna );
 
   std::vector< MemoryRange > bisect( void ) const;
   Memory range_median( void ) const;
@@ -48,7 +50,7 @@ public:
   std::string str( void ) const;
 
   RemyBuffers::MemoryRange DNA( void ) const;
-  MemoryRange( const RemyBuffers::MemoryRange & dna );
+  
 
   friend size_t hash_value( const MemoryRange & mr );
 };

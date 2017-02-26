@@ -20,14 +20,26 @@ void print_range( const Range & range, const string & name )
 int main( int argc, char *argv[] )
 {
   WhiskerTree whiskers;
+  RemyBuffers::WhiskerTree tree;
   string output_filename;
   BreederOptions options;
   WhiskerImproverOptions whisker_options;
   RemyBuffers::ConfigRange input_config;
   string config_filename;
+  
+  unsigned int run = 0;
+  
+  RemyBuffers::ConfigVector training_configs; //Vector of NetConfig ~ training network configurations
+  bool written = false;
+  
 
+  
+  
+  //Read the input arguments of remy
   for ( int i = 1; i < argc; i++ ) {
     string arg( argv[ i ] );
+    
+   //try to open look-up table with name specified in parameter if=
     if ( arg.substr( 0, 3 ) == "if=" ) {
       string filename( arg.substr( 3 ) );
       int fd = open( filename.c_str(), O_RDONLY );
@@ -35,13 +47,14 @@ int main( int argc, char *argv[] )
 	perror( "open" );
 	exit( 1 );
       }
-
-      RemyBuffers::WhiskerTree tree;
+ 
+    //Try to parse the look-up table
+    
       if ( !tree.ParseFromFileDescriptor( fd ) ) {
 	fprintf( stderr, "Could not parse %s.\n", filename.c_str() );
 	exit( 1 );
       }
-      whiskers = WhiskerTree( tree );
+      whiskers = WhiskerTree( tree ); 
 
       if ( close( fd ) < 0 ) {
 	perror( "close" );
@@ -51,7 +64,7 @@ int main( int argc, char *argv[] )
     } else if ( arg.substr( 0, 3 ) == "of=" ) {
       output_filename = string( arg.substr( 3 ) );
 
-    } else if ( arg.substr( 0, 4 ) == "opt=" ) {
+    } else if ( arg.substr( 0, 4 ) == "opt=" ) {   //what if you don't insert the argument opt?
       whisker_options.optimize_window_increment = false;
       whisker_options.optimize_window_multiple = false;
       whisker_options.optimize_intersend = false;
@@ -96,7 +109,7 @@ int main( int argc, char *argv[] )
 
   RatBreeder breeder( options, whisker_options );
 
-  unsigned int run = 0;
+ 
 
   printf( "#######################\n" );
   printf( "Evaluator simulations will run for %d ticks\n",
@@ -125,23 +138,19 @@ int main( int argc, char *argv[] )
     printf( "Not saving output. Use the of=FILENAME argument to save the results.\n" );
   }
 
-  RemyBuffers::ConfigVector training_configs;
-  bool written = false;
-
   while ( 1 ) {
-    auto outcome = breeder.improve( whiskers );
+    Evaluator< WhiskerTree >::Outcome outcome = breeder.improve( whiskers );
     printf( "run = %u, score = %f\n", run, outcome.score );
 
     printf( "whiskers: %s\n", whiskers.str().c_str() );
 
-    for ( auto &run : outcome.throughputs_delays ) {
+    for ( auto /*vector of pairs (NetConfig, vector of thr_del) */ &run : outcome.throughputs_delays ) {
       if ( !(written) ) {
         for ( auto &run : outcome.throughputs_delays) {
           // record the config to the protobuf
-          RemyBuffers::NetConfig* net_config = training_configs.add_config();
-          *net_config = run.first.DNA();
+          RemyBuffers::NetConfig* net_config = training_configs.add_config(); //Add the NetConfig in the ConfigVector if not written already, and return a pointer for that element
+          *net_config = run.first.DNA(); //Create a RemyBuffers::NetConfig and set all the attributes as the NetConfig class (run.first)
           written = true;
-
         }
       }
       printf( "===\nconfig: %s\n", run.first.str().c_str() );
@@ -160,7 +169,7 @@ int main( int argc, char *argv[] )
 	exit( 1 );
       }
 
-      auto remycc = whiskers.DNA();
+      auto remycc = whiskers.DNA(); //serialize the whisker tree
       remycc.mutable_config()->CopyFrom( options.config_range.DNA() );
       remycc.mutable_optimizer()->CopyFrom( Whisker::get_optimizer().DNA() );
       remycc.mutable_configvector()->CopyFrom( training_configs );

@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="100">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <df root="." name="0">
+      <df name="graph">
+        <in>cairo_objects.cc</in>
+        <in>display.cc</in>
+        <in>fader-templates.cc</in>
+        <in>fader.cc</in>
+        <in>gl_objects.cc</in>
+        <in>graph.cc</in>
+        <in>image.cc</in>
+        <in>ratatouille.cc</in>
+      </df>
+      <df name="protobufs">
+        <in>answer.pb.cc</in>
+        <in>dna.pb.cc</in>
+        <in>problem.pb.cc</in>
+        <in>simulationresults.pb.cc</in>
+      </df>
+      <df name="src">
+        <in>aimd-templates.cc</in>
+        <in>aimd.cc</in>
+        <in>breeder.cc</in>
+        <in>configrange.cc</in>
+        <in>evaluator.cc</in>
+        <in>fin.cc</in>
+        <in>fintree.cc</in>
+        <in>fish-templates.cc</in>
+        <in>fish.cc</in>
+        <in>fishbreeder.cc</in>
+        <in>input-configrange.cc</in>
+        <in>inspect-configrange.cc</in>
+        <in>inspect-simulationsdata.cc</in>
+        <in>link-templates.cc</in>
+        <in>memory.cc</in>
+        <in>memoryrange.cc</in>
+        <in>network.cc</in>
+        <in>random.cc</in>
+        <in>rat-templates.cc</in>
+        <in>rat.cc</in>
+        <in>ratbreeder.cc</in>
+        <in>receiver.cc</in>
+        <in>remy-poisson.cc</in>
+        <in>remy.cc</in>
+        <in>scoring-example.cc</in>
+        <in>sender-logger.cc</in>
+        <in>sender-runner.cc</in>
+        <in>sendergang.cc</in>
+        <in>sendergangofgangs.cc</in>
+        <in>simulationresults.cc</in>
+        <in>whisker.cc</in>
+        <in>whiskertree.cc</in>
+      </df>
+    </df>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>Makefile</itemPath>
+      <itemPath>configure</itemPath>
+      <itemPath>nbproject/private/launcher.properties</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <sourceFolderFilter>^(nbproject)$</sourceFolderFilter>
+  <sourceRootList>
+    <Elem>.</Elem>
+  </sourceRootList>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Default" type="0">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>false</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <flagsDictionary>
+        <element flagsID="0" commonFlags="-std=c++11"/>
+        <element flagsID="1" commonFlags="-std=c++11 -Wpedantic"/>
+      </flagsDictionary>
+      <codeAssistance>
+      </codeAssistance>
+      <makefileType>
+        <makeTool>
+          <buildCommandWorkingDir>.</buildCommandWorkingDir>
+          <buildCommand>${MAKE} -f Makefile</buildCommand>
+          <cleanCommand>${MAKE} -f Makefile clean</cleanCommand>
+          <executablePath></executablePath>
+        </makeTool>
+        <preBuild>
+          <preBuildCommandWorkingDir>.</preBuildCommandWorkingDir>
+          <preBuildCommand>./configure CC=${IDE_CC} CXX=${IDE_CXX} CFLAGS="-g3 -gdwarf-2" CXXFLAGS="-g3 -gdwarf-2"</preBuildCommand>
+          <preBuildFirst>true</preBuildFirst>
+        </preBuild>
+      </makefileType>
+      <folder path="0/protobufs">
+        <ccTool>
+          <incDir>
+            <pElem>protobufs</pElem>
+            <pElem>.</pElem>
+            <pElem>/usr/local/include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>_THREAD_SAFE</Elem>
+          </preprocessorList>
+        </ccTool>
+      </folder>
+      <folder path="0/src">
+        <ccTool>
+          <incDir>
+            <pElem>src</pElem>
+            <pElem>.</pElem>
+            <pElem>protobufs</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+          </preprocessorList>
+        </ccTool>
+      </folder>
+      <item path="graph/cairo_objects.cc" ex="false" tool="1" flavor2="4">
+      </item>
+      <item path="graph/display.cc" ex="false" tool="1" flavor2="4">
+      </item>
+      <item path="graph/fader-templates.cc" ex="false" tool="1" flavor2="4">
+      </item>
+      <item path="graph/fader.cc" ex="false" tool="1" flavor2="4">
+      </item>
+      <item path="graph/gl_objects.cc" ex="false" tool="1" flavor2="4">
+      </item>
+      <item path="graph/graph.cc" ex="false" tool="1" flavor2="4">
+      </item>
+      <item path="graph/image.cc" ex="false" tool="1" flavor2="4">
+      </item>
+      <item path="graph/ratatouille.cc" ex="false" tool="1" flavor2="4">
+      </item>
+      <item path="protobufs/answer.pb.cc" ex="false" tool="1" flavor2="8">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="protobufs/dna.pb.cc" ex="false" tool="1" flavor2="8">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="protobufs/problem.pb.cc" ex="false" tool="1" flavor2="8">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="protobufs/simulationresults.pb.cc" ex="false" tool="1" flavor2="8">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="src/aimd-templates.cc" ex="false" tool="1" flavor2="8">
+        <ccTool flags="1">
+        </ccTool>
+      </item>
+      <item path="src/aimd.cc" ex="false" tool="1" flavor2="8">
+        <ccTool flags="1">
+        </ccTool>
+      </item>
+      <item path="src/breeder.cc" ex="false" tool="1" flavor2="8">
+        <ccTool flags="1">
+        </ccTool>
+      </item>
+      <item path="src/configrange.cc" ex="false" tool="1" flavor2="8">
+        <ccTool flags="1">
+        </ccTool>
+      </item>
+      <item path="src/evaluator.cc" ex="false" tool="1" flavor2="8">
+        <ccTool flags="1">
+        </ccTool>
+      </item>
+      <item path="src/fin.cc" ex="false" tool="1" flavor2="8">
+        <ccTool flags="1">
+        </ccTool>
+      </item>
+      <item path="src/fintree.cc" ex="false" tool="1" flavor2="8">
+        <ccTool flags="1">
+        </ccTool>
+      </item>
+      <item path="src/fish-templates.cc" ex="false" tool="1" flavor2="8">
+        <ccTool flags="1">
+        </ccTool>
+      </item>
+      <item path="src/fish.cc" ex="false" tool="1" flavor2="8">
+        <ccTool flags="1">
+        </ccTool>
+      </item>
+      <item path="src/fishbreeder.cc" ex="false" tool="1" flavor2="8">
+        <ccTool flags="1">
+        </ccTool>
+      </item>
+      <item path="src/input-configrange.cc" ex="false" tool="1" flavor2="8">
+        <ccTool flags="1">
+        </ccTool>
+      </item>
+      <item path="src/inspect-configrange.cc" ex="false" tool="1" flavor2="8">
+        <ccTool flags="1">
+        </ccTool>
+      </item>
+      <item path="src/inspect-simulationsdata.cc" ex="false" tool="1" flavor2="8">
+        <ccTool flags="1">
+        </ccTool>
+      </item>
+      <item path="src/link-templates.cc" ex="false" tool="1" flavor2="8">
+        <ccTool flags="1">
+        </ccTool>
+      </item>
+      <item path="src/memory.cc" ex="false" tool="1" flavor2="8">
+        <ccTool flags="1">
+        </ccTool>
+      </item>
+      <item path="src/memoryrange.cc" ex="false" tool="1" flavor2="8">
+        <ccTool flags="1">
+        </ccTool>
+      </item>
+      <item path="src/network.cc" ex="false" tool="1" flavor2="8">
+        <ccTool flags="1">
+        </ccTool>
+      </item>
+      <item path="src/random.cc" ex="false" tool="1" flavor2="8">
+        <ccTool flags="1">
+        </ccTool>
+      </item>
+      <item path="src/rat-templates.cc" ex="false" tool="1" flavor2="8">
+        <ccTool flags="1">
+        </ccTool>
+      </item>
+      <item path="src/rat.cc" ex="false" tool="1" flavor2="8">
+        <ccTool flags="1">
+        </ccTool>
+      </item>
+      <item path="src/ratbreeder.cc" ex="false" tool="1" flavor2="8">
+        <ccTool flags="1">
+        </ccTool>
+      </item>
+      <item path="src/receiver.cc" ex="false" tool="1" flavor2="8">
+        <ccTool flags="1">
+        </ccTool>
+      </item>
+      <item path="src/remy-poisson.cc" ex="false" tool="1" flavor2="8">
+        <ccTool flags="1">
+        </ccTool>
+      </item>
+      <item path="src/remy.cc" ex="false" tool="1" flavor2="8">
+        <ccTool flags="1">
+        </ccTool>
+      </item>
+      <item path="src/scoring-example.cc" ex="false" tool="1" flavor2="8">
+        <ccTool flags="1">
+        </ccTool>
+      </item>
+      <item path="src/sender-logger.cc" ex="false" tool="1" flavor2="8">
+        <ccTool flags="1">
+        </ccTool>
+      </item>
+      <item path="src/sender-runner.cc" ex="false" tool="1" flavor2="8">
+        <ccTool flags="1">
+        </ccTool>
+      </item>
+      <item path="src/sendergang.cc" ex="false" tool="1" flavor2="8">
+        <ccTool flags="1">
+        </ccTool>
+      </item>
+      <item path="src/sendergangofgangs.cc" ex="false" tool="1" flavor2="8">
+        <ccTool flags="1">
+        </ccTool>
+      </item>
+      <item path="src/simulationresults.cc" ex="false" tool="1" flavor2="8">
+        <ccTool flags="1">
+        </ccTool>
+      </item>
+      <item path="src/whisker.cc" ex="false" tool="1" flavor2="8">
+        <ccTool flags="1">
+        </ccTool>
+      </item>
+      <item path="src/whiskertree.cc" ex="false" tool="1" flavor2="8">
+        <ccTool flags="1">
+        </ccTool>
+      </item>
+    </conf>
+  </confs>
+</configurationDescriptor>

@@ -70,7 +70,7 @@ vector< Whisker > Whisker::next_generation( bool optimize_window_increment, bool
 	new_whisker._window_multiple = alt_multiple;
 	new_whisker._intersend = alt_intersend;
 
-	new_whisker.round();
+	new_whisker.round(); //CHECK: not sure what this rounding does
 
 	ret.push_back( new_whisker );
       }

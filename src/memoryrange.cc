@@ -1,6 +1,7 @@
 #include <boost/functional/hash.hpp>
 
 #include "memoryrange.hh"
+#include "memory.hh"
 
 using namespace std;
 using namespace boost::accumulators;
@@ -10,11 +11,11 @@ std::vector< MemoryRange > MemoryRange::bisect( void ) const
   vector< MemoryRange > ret { *this };
 
   /* bisect in each active axis */
-  for ( auto & i : _active_axis ) {
+  for ( Axis & i : _active_axis ) {
       vector< MemoryRange > doubled;
       for ( const auto &x : ret ) {
-      auto ersatz_lower( x._lower ), ersatz_upper( x._upper );
-      ersatz_lower.mutable_field( i ) = ersatz_upper.mutable_field( i ) = median( _acc[ i ] );
+      Memory ersatz_lower( x._lower ), ersatz_upper( x._upper );
+      ersatz_lower.mutable_field( i ) = ersatz_upper.mutable_field( i ) = median( _acc[  i ] );
 
       if ( x._lower == ersatz_upper ) {
 	/* try range midpoint instead */
