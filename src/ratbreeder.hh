@@ -16,7 +16,7 @@ protected:
   WhiskerImproverOptions _options;
 
   
-  std::vector< Whisker > get_replacements( Whisker & action_to_improve ) override;
+  std::vector< Whisker > get_replacements( Whisker & action_to_improve );
 
 public:
   WhiskerImprover( const Evaluator<  WhiskerTree > & evaluator, const WhiskerTree & rat, const WhiskerImproverOptions & options,

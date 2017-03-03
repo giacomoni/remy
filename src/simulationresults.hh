@@ -32,7 +32,7 @@ private:
   void _populate_actions( SimulationResultBuffers::SimulationsData & pb ) const;
 
   ActionTree actions;
-  std::vector< struct SimulationRunData > run_data;
+  std::vector< SimulationRunData > run_data;
 
   // problem settings
   unsigned int prng_seed = 0;
@@ -50,16 +50,16 @@ public:
   SimulationRunData( NetConfig config, double interval ) : _config( config ), _interval( interval ), _data() {};
 
   // Adds a data point and returns a reference to it
-  struct SimulationRunDataPoint & add_datum( double seconds );
+  SimulationRunDataPoint & add_datum( double seconds );
 
   const NetConfig & config() const { return _config; }
   double interval() const { return _interval; }
-  const std::vector< struct SimulationRunDataPoint > & data() const { return _data; }
+  const std::vector< SimulationRunDataPoint > & data() const { return _data; }
 
 private:
   NetConfig _config;
   double _interval;
-  std::vector< struct SimulationRunDataPoint > _data;
+  std::vector< SimulationRunDataPoint > _data;
 };
 
 class SimulationRunDataPoint

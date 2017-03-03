@@ -11,10 +11,10 @@ std::vector< MemoryRange > MemoryRange::bisect( void ) const
   vector< MemoryRange > ret { *this };
 
   /* bisect in each active axis */
-  for ( Axis & i : _active_axis ) {
+  for ( auto & i : _active_axis ) {
       vector< MemoryRange > doubled;
       for ( const auto &x : ret ) {
-      Memory ersatz_lower( x._lower ), ersatz_upper( x._upper );
+      auto ersatz_lower( x._lower ), ersatz_upper( x._upper );
       ersatz_lower.mutable_field( i ) = ersatz_upper.mutable_field( i ) = median( _acc[  i ] );
 
       if ( x._lower == ersatz_upper ) {

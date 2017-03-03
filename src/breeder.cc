@@ -58,7 +58,7 @@ void ActionImprover< T, A >::evaluate_replacements(const vector<A> &replacements
     if ( eval_cache_.find( test_replacement ) == eval_cache_.end() ) {
       /* need to fire off a new thread to evaluate */
       scores.emplace_back( test_replacement,
-                           std::async( std::launch::async, [] ( const Evaluator< T > & e,
+                           async ( launch::async, [] ( const Evaluator< T > & e,
                                                       const A & r,
                                                       const T & tree,
                                                       const double carefulness ) {

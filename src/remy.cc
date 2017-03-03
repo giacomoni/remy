@@ -139,7 +139,7 @@ int main( int argc, char *argv[] )
   }
 
   while ( 1 ) {
-    Evaluator< WhiskerTree >::Outcome outcome = breeder.improve( whiskers );
+    auto outcome = breeder.improve( whiskers );
     printf( "run = %u, score = %f\n", run, outcome.score );
 
     printf( "whiskers: %s\n", whiskers.str().c_str() );
