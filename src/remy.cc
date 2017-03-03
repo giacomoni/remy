@@ -6,10 +6,15 @@
 #include <sys/stat.h>
 #include <fcntl.h>
 
+
 #include "ratbreeder.hh"
 #include "dna.pb.h"
 #include "configrange.hh"
+#include "spdlog/spdlog.h"
+
+
 using namespace std;
+namespace spd = spdlog;
 
 void print_range( const Range & range, const string & name )
 {
@@ -27,13 +32,14 @@ int main( int argc, char *argv[] )
   RemyBuffers::ConfigRange input_config;
   string config_filename;
   
+  auto console = spd::stdout_color_mt("main");
+    console->info("Welcome to spdlog!") ; //can use info, error, warning, critical
+
   unsigned int run = 0;
   
   RemyBuffers::ConfigVector training_configs; //Vector of NetConfig ~ training network configurations
   bool written = false;
-  
-
-  
+ 
   
   //Read the input arguments of remy
   for ( int i = 1; i < argc; i++ ) {
@@ -104,6 +110,10 @@ int main( int argc, char *argv[] )
     fprintf( stderr, "You can generate one using './configuration'. \n");
     exit ( 1 );
   }
+  
+  
+
+  console->info("Parameters for ConfigRange: {}", input_config.DebugString());
 
   options.config_range = ConfigRange( input_config );
 

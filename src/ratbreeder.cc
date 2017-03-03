@@ -15,7 +15,10 @@ Evaluator< WhiskerTree >::Outcome RatBreeder::improve( WhiskerTree & whiskers )
   unsigned int generation = 0;
 
   while ( generation < 5 ) {
+    console->info("Generation: {}", generation);
     const Evaluator< WhiskerTree > eval( _options.config_range );
+    
+    console->info(whiskers.DNA().DebugString());
 
     auto outcome( eval.score( whiskers ) );
 

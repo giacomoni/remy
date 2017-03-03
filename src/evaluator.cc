@@ -6,6 +6,7 @@
 #include "rat-templates.cc"
 #include "fish-templates.cc"
 
+
 template <typename T>
 Evaluator< T >::Evaluator( const ConfigRange & range )
   : _prng_seed( global_PRNG()() ), /* freeze the PRNG seed for the life of this Evaluator */
@@ -87,14 +88,18 @@ Evaluator< WhiskerTree >::Outcome Evaluator< WhiskerTree >::score( WhiskerTree &
 
   /* run tests */
   Evaluator::Outcome the_outcome;
+  int i = 0;
   for ( auto &x : configs ) {
     /* run once */
+      
     Network<SenderGang<Rat, TimeSwitchedSender<Rat>>,
       SenderGang<Rat, TimeSwitchedSender<Rat>>> network1( Rat( run_whiskers, trace ), run_prng, x );
     network1.run_simulation( ticks_to_run );
     
+    
     the_outcome.score += network1.senders().utility();
     the_outcome.throughputs_delays.emplace_back( x, network1.senders().throughputs_delays() );
+    i++;
   }
 
   the_outcome.used_actions = run_whiskers;

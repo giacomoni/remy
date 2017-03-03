@@ -32,7 +32,7 @@ public:
 private:
   const unsigned int _prng_seed;
   unsigned int _tick_count;
-
+  
   std::vector< NetConfig > _configs;
 
   ProblemBuffers::Problem _ProblemSettings_DNA ( void ) const;

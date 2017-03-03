@@ -46,6 +46,54 @@
       <df name="src">
         <df name=".deps">
         </df>
+        <df name="logs">
+        </df>
+        <df name="spdlog">
+          <df name="details">
+            <in>async_log_helper.h</in>
+            <in>async_logger_impl.h</in>
+            <in>file_helper.h</in>
+            <in>log_msg.h</in>
+            <in>logger_impl.h</in>
+            <in>mpmc_bounded_q.h</in>
+            <in>null_mutex.h</in>
+            <in>os.h</in>
+            <in>pattern_formatter_impl.h</in>
+            <in>registry.h</in>
+            <in>spdlog_impl.h</in>
+          </df>
+          <df name="fmt">
+            <df name="bundled">
+              <in>format.cc</in>
+              <in>format.h</in>
+              <in>ostream.cc</in>
+              <in>ostream.h</in>
+              <in>printf.h</in>
+            </df>
+            <in>fmt.h</in>
+            <in>ostr.h</in>
+          </df>
+          <df name="sinks">
+            <in>android_sink.h</in>
+            <in>ansicolor_sink.h</in>
+            <in>base_sink.h</in>
+            <in>dist_sink.h</in>
+            <in>file_sinks.h</in>
+            <in>msvc_sink.h</in>
+            <in>null_sink.h</in>
+            <in>ostream_sink.h</in>
+            <in>sink.h</in>
+            <in>stdout_sinks.h</in>
+            <in>syslog_sink.h</in>
+            <in>wincolor_sink.h</in>
+          </df>
+          <in>async_logger.h</in>
+          <in>common.h</in>
+          <in>formatter.h</in>
+          <in>logger.h</in>
+          <in>spdlog.h</in>
+          <in>tweakme.h</in>
+        </df>
         <df name="test">
         </df>
         <in>action.hh</in>
