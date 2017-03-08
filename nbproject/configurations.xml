@@ -23,7 +23,8 @@
         <in>aimd.cc</in>
         <in>breeder.cc</in>
         <in>configrange.cc</in>
-        <in>evaluator.cc</in>
+        <in>evaluator_inst.cc</in>
+        <in>evaluatordef.h</in>
         <in>fin.cc</in>
         <in>fintree.cc</in>
         <in>fish-templates.cc</in>
@@ -36,6 +37,9 @@
         <in>memory.cc</in>
         <in>memoryrange.cc</in>
         <in>network.cc</in>
+        <in>outcome.hh</in>
+        <in>outcome_inst.cc</in>
+        <in>outcomedef.hh</in>
         <in>random.cc</in>
         <in>rat-templates.cc</in>
         <in>rat.cc</in>
@@ -165,9 +169,9 @@
         <ccTool flags="1">
         </ccTool>
       </item>
-      <item path="src/evaluator.cc" ex="false" tool="1" flavor2="8">
-        <ccTool flags="1">
-        </ccTool>
+      <item path="src/evaluator_inst.cc" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/evaluatordef.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/fin.cc" ex="false" tool="1" flavor2="8">
         <ccTool flags="1">
@@ -216,6 +220,12 @@
       <item path="src/network.cc" ex="false" tool="1" flavor2="8">
         <ccTool flags="1">
         </ccTool>
+      </item>
+      <item path="src/outcome.hh" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/outcome_inst.cc" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/outcomedef.hh" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/random.cc" ex="false" tool="1" flavor2="8">
         <ccTool flags="1">

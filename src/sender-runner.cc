@@ -138,11 +138,11 @@ int main( int argc, char *argv[] )
   if ( is_poisson ) {
     Evaluator< FinTree > eval( configuration_range );
     auto outcome = eval.score( fins, false, 10 );
-    parse_outcome< Evaluator< FinTree >::Outcome > ( outcome );
+    parse_outcome< Outcome<FinTree> > ( outcome );
   } else {
     Evaluator< WhiskerTree > eval( configuration_range );
     auto outcome = eval.score( whiskers, false, 10 );
-    parse_outcome< Evaluator< WhiskerTree >::Outcome > ( outcome );
+    parse_outcome< Outcome<WhiskerTree> > ( outcome );
   }
 
   return 0;

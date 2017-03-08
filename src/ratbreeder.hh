@@ -38,7 +38,7 @@ public:
   RatBreeder( const BreederOptions & s_options, const WhiskerImproverOptions & s_whisker_options ) 
     :/*Calling constructor of Breeder before the body*/ Breeder( s_options ), /*Calling constructor of WhiskerImprovementOptions before the body*/ _whisker_options( s_whisker_options ) {console=spd::stdout_color_mt("Ratbreeder");};
 
-  Evaluator< WhiskerTree >::Outcome improve( WhiskerTree & whiskers );
+  Outcome<WhiskerTree> improve( WhiskerTree & whiskers );
 };
 
 #endif

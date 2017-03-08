@@ -94,7 +94,7 @@
           <in>spdlog.h</in>
           <in>tweakme.h</in>
         </df>
-        <df name="test">
+        <df name="tests">
         </df>
         <in>action.hh</in>
         <in>aimd-templates.cc</in>
@@ -105,8 +105,9 @@
         <in>configrange.cc</in>
         <in>configrange.hh</in>
         <in>delay.hh</in>
-        <in>evaluator.cc</in>
         <in>evaluator.hh</in>
+        <in>evaluator_inst.cc</in>
+        <in>evaluatordef.h</in>
         <in>exponential.hh</in>
         <in>fin.cc</in>
         <in>fin.hh</in>
@@ -128,6 +129,9 @@
         <in>memoryrange.hh</in>
         <in>network.cc</in>
         <in>network.hh</in>
+        <in>outcome.hh</in>
+        <in>outcome_inst.cc</in>
+        <in>outcomedef.hh</in>
         <in>packet.hh</in>
         <in>poisson.hh</in>
         <in>random.cc</in>

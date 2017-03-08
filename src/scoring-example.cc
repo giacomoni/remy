@@ -161,7 +161,7 @@ int main( int argc, char *argv[] )
     exit( 1 );
   }
 
-  Evaluator< WhiskerTree >::Outcome parsed_outcome( proto_outcome );
+  Outcome<WhiskerTree> parsed_outcome( proto_outcome );
   printf( "score = %f\n", outcome.score );
   double norm_score = 0;
 

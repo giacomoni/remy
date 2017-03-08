@@ -4,7 +4,7 @@
 
 using namespace std;
 
-Evaluator< WhiskerTree >::Outcome RatBreeder::improve( WhiskerTree & whiskers )
+Outcome<WhiskerTree> RatBreeder::improve( WhiskerTree & whiskers )
 {
   /* back up the original whiskertree */
   /* this is to ensure we don't regress */
@@ -20,7 +20,7 @@ Evaluator< WhiskerTree >::Outcome RatBreeder::improve( WhiskerTree & whiskers )
     
     console->info(whiskers.DNA().DebugString());
 
-    auto outcome( eval.score( whiskers ) );
+    Outcome<WhiskerTree> outcome( eval.score( whiskers ) );
 
     /* is there a whisker at this generation that we can improve? */
     auto most_used_whisker_ptr = outcome.used_actions.most_used( generation ); //CHECK: is this the correct algorithm to extract the most used rule?

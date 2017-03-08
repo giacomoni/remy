@@ -4,7 +4,7 @@
 
 using namespace std;
 
-Evaluator< FinTree >::Outcome FishBreeder::improve( FinTree & fins )
+Outcome<FinTree> FishBreeder::improve( FinTree & fins )
 {
   /* back up the original fintree */
   /* this is to ensure we don't regress */

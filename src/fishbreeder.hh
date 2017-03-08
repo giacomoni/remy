@@ -18,7 +18,7 @@ class FishBreeder : public Breeder< FinTree >
 public:
   FishBreeder( const BreederOptions & s_options ) : Breeder( s_options ) {};
 
-  Evaluator< FinTree >::Outcome improve( FinTree & fins );
+  Outcome<FinTree> improve( FinTree & fins );
 };
 
 #endif

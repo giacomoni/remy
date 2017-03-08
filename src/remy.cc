@@ -11,6 +11,7 @@
 #include "dna.pb.h"
 #include "configrange.hh"
 #include "spdlog/spdlog.h"
+//#include "outcome.hh"
 
 
 using namespace std;
@@ -149,14 +150,14 @@ int main( int argc, char *argv[] )
   }
 
   while ( 1 ) {
-    auto outcome = breeder.improve( whiskers );
+    Outcome<WhiskerTree> outcome = breeder.improve( whiskers );
     printf( "run = %u, score = %f\n", run, outcome.score );
 
     printf( "whiskers: %s\n", whiskers.str().c_str() );
 
-    for ( auto /*vector of pairs (NetConfig, vector of thr_del) */ &run : outcome.throughputs_delays ) {
+    for ( std::pair< NetConfig, std::vector< std::pair< double, double > > > /*vector of pairs (NetConfig, vector of thr_del) */ &run : outcome.throughputs_delays ) {
       if ( !(written) ) {
-        for ( auto &run : outcome.throughputs_delays) {
+        for (  std::pair< NetConfig, std::vector< std::pair< double, double > > > &run : outcome.throughputs_delays) {
           // record the config to the protobuf
           RemyBuffers::NetConfig* net_config = training_configs.add_config(); //Add the NetConfig in the ConfigVector if not written already, and return a pointer for that element
           *net_config = run.first.DNA(); //Create a RemyBuffers::NetConfig and set all the attributes as the NetConfig class (run.first)
