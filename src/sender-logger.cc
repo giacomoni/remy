@@ -3,12 +3,11 @@
 #include <string>
 
 #include "simulationresults.hh"
-#include "network.cc"
+#include "network.hh"
 #include "sendergang.hh"
 #include "fish.hh"
-#include "fish-templates.cc"
 #include "rat.hh"
-#include "rat-templates.cc"
+
 
 template <typename ActionTree>
 void print_tree(ActionTree & tree)

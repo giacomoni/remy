@@ -6,19 +6,19 @@ bin_PROGRAMS = remy remy-poisson sender-runner sender-logger scoring-example con
 
 common_source = delay.hh evaluator_inst.cc evaluatordef.h             \
         evaluator.hh outcome.hh outcome_inst.cc outcomedef.hh                \
-	exponential.hh link.hh link-templates.cc stochastic-loss.hh                      \
+	exponential.hh link.hh linkdef.hh link_inst.cc stochastic-loss.hh                      \
 	memory.cc memory.hh memoryrange.cc memoryrange.hh              \
-	network.cc network.hh packet.hh poisson.hh                     \
-	random.cc random.hh rat.cc rat.hh rat-templates.cc             \
-	receiver.cc receiver.hh sendergang.cc sendergang.hh            \
+	network.hh networkdef.hh network_inst.cc packet.hh poisson.hh                     \
+	random.cc random.hh rat.cc rat.hh rat_inst.cc rat_def.hh            \
+	receiver.cc receiver.hh sendergang_inst.cc sendergangdef.hh sendergang.hh            \
 	senderdatapoint.hh                                             \
-	sendergangofgangs.cc sendergangofgangs.hh                  \
+	sendergangofgangs_inst.cc sendergangofgangsdef.h sendergangofgangs.hh                  \
 	utility.hh whisker.cc whisker.hh whiskertree.cc whiskertree.hh \
-	aimd-templates.cc aimd.cc aimd.hh                              \
+	aimd_inst.cc aimd.cc aimd.hh aimd_def.hh                              \
 	configrange.hh configrange.cc                              \
 	simulationresults.hh simulationresults.cc                      \
     action.hh fin.hh fin.cc fintree.cc fintree.hh  	               \
-    fish.hh fish.cc fish-templates.cc
+    fish.hh fish.cc fish_inst.cc fishdef.hh
 
 noinst_LIBRARIES = libremycore.a
 libremycore_a_SOURCES = $(common_source)

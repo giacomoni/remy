@@ -11,9 +11,8 @@
 #include "problem.pb.h"
 #include "answer.pb.h"
 #include "outcome.hh"
-#include "network.cc"
-#include "rat-templates.cc"
-#include "fish-templates.cc"
+#include "rat.hh"
+#include "fish.hh"
 
 template <typename T>
 class Evaluator {

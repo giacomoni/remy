@@ -1,3 +1,19 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+/* 
+ * File:   aimd_def.hh
+ * Author: lg317
+ *
+ * Created on 08 March 2017, 16:36
+ */
+
+#ifndef AIMD_DEF_HH
+#define AIMD_DEF_HH
+
 #include <cassert>
 #include <utility>
 
@@ -17,3 +33,7 @@ void Aimd::send( const unsigned int id, NextHop & next, const double & tickno )
     next.accept( p, tickno );
   }
 }
+
+
+#endif /* AIMD_DEF_HH */
+

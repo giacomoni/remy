@@ -1,3 +1,19 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+/* 
+ * File:   sendergangdef.hh
+ * Author: lg317
+ *
+ * Created on 08 March 2017, 16:11
+ */
+
+#ifndef SENDERGANGDEF_HH
+#define SENDERGANGDEF_HH
+
 #include <algorithm>
 
 #include "sendergang.hh"
@@ -302,3 +318,7 @@ double SenderGang<SenderType, SwitcherType>::next_event_time( const double & tic
 
   return ret;
 }
+
+
+#endif /* SENDERGANGDEF_HH */
+

@@ -5,6 +5,9 @@
  */
 
 #include "evaluatordef.h"
+#include "network.hh"
+#include "rat.hh"
+#include "sendergang.hh"
 
 
 //Instantiate some member functions of Evaluator
