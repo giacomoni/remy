@@ -1,23 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/* 
- * File:   networkdef.hh
- * Author: lg317
- *
- * Created on 08 March 2017, 15:45
- */
-
-#ifndef NETWORKDEF_HH
-#define NETWORKDEF_HH
-
 #include "network.hh"
 #include "simulationresults.hh"
-#include "sendergangofgangs.hh"
-#include "link.hh"
+#include "sendergangofgangs.cc"
+#include "link-templates.cc"
 #include "stochastic-loss.hh"
 template <class Gang1Type, class Gang2Type>
 Network<Gang1Type, Gang2Type>::Network( const typename Gang1Type::Sender & example_sender1,
@@ -156,7 +140,3 @@ vector<unsigned int> Network<Gang1Type, Gang2Type>::packets_in_flight( void ) co
 
   return ret;
 }
-
-
-#endif /* NETWORKDEF_HH */
-

@@ -1,22 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/* 
- * File:   sendergangofgangsdef.h
- * Author: lg317
- *
- * Created on 08 March 2017, 15:52
- */
-
-#ifndef SENDERGANGOFGANGSDEF_H
-#define SENDERGANGOFGANGSDEF_H
-
 #include <memory>
 #include "sendergangofgangs.hh"
-#include "sendergang.hh"
+#include "sendergang.cc"
 
 using namespace std;
 
@@ -99,7 +83,3 @@ double SenderGangofGangs<Gang1Type, Gang2Type>::next_event_time( const double & 
 {
   return min( gang1_.next_event_time( tickno ), gang2_.next_event_time( tickno ) );
 }
-
-
-#endif /* SENDERGANGOFGANGSDEF_H */
-

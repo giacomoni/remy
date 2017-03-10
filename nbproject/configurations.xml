@@ -19,46 +19,39 @@
         <in>simulationresults.pb.cc</in>
       </df>
       <df name="src">
+        <in>aimd-templates.cc</in>
         <in>aimd.cc</in>
-        <in>aimd_def.hh</in>
-        <in>aimd_inst.cc</in>
         <in>breeder.cc</in>
         <in>configrange.cc</in>
         <in>evaluator_inst.cc</in>
         <in>evaluatordef.h</in>
         <in>fin.cc</in>
         <in>fintree.cc</in>
+        <in>fish-templates.cc</in>
         <in>fish.cc</in>
-        <in>fish_inst.cc</in>
         <in>fishbreeder.cc</in>
-        <in>fishdef.hh</in>
         <in>input-configrange.cc</in>
         <in>inspect-configrange.cc</in>
         <in>inspect-simulationsdata.cc</in>
-        <in>link_def.hh</in>
-        <in>link_inst.cc</in>
+        <in>link-templates.cc</in>
         <in>memory.cc</in>
         <in>memoryrange.cc</in>
-        <in>network_inst.cc</in>
-        <in>networkdef.hh</in>
+        <in>network.cc</in>
         <in>outcome.hh</in>
         <in>outcome_inst.cc</in>
         <in>outcomedef.hh</in>
         <in>random.cc</in>
+        <in>rat-templates.cc</in>
         <in>rat.cc</in>
-        <in>rat_inst.cc</in>
         <in>ratbreeder.cc</in>
-        <in>ratdef.hh</in>
         <in>receiver.cc</in>
         <in>remy-poisson.cc</in>
         <in>remy.cc</in>
         <in>scoring-example.cc</in>
         <in>sender-logger.cc</in>
         <in>sender-runner.cc</in>
-        <in>sendergang_inst.cc</in>
-        <in>sendergangdef.hh</in>
-        <in>sendergangofgangs_inst.cc</in>
-        <in>sendergangofgangsdef.h</in>
+        <in>sendergang.cc</in>
+        <in>sendergangofgangs.cc</in>
         <in>simulationresults.cc</in>
         <in>whisker.cc</in>
         <in>whiskertree.cc</in>
@@ -160,13 +153,13 @@
         <ccTool flags="0">
         </ccTool>
       </item>
-      <item path="src/aimd.cc" ex="false" tool="1" flavor2="8">
+      <item path="src/aimd-templates.cc" ex="false" tool="1" flavor2="8">
         <ccTool flags="1">
         </ccTool>
       </item>
-      <item path="src/aimd_def.hh" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="src/aimd_inst.cc" ex="false" tool="1" flavor2="0">
+      <item path="src/aimd.cc" ex="false" tool="1" flavor2="8">
+        <ccTool flags="1">
+        </ccTool>
       </item>
       <item path="src/breeder.cc" ex="false" tool="1" flavor2="8">
         <ccTool flags="1">
@@ -188,17 +181,17 @@
         <ccTool flags="1">
         </ccTool>
       </item>
+      <item path="src/fish-templates.cc" ex="false" tool="1" flavor2="8">
+        <ccTool flags="1">
+        </ccTool>
+      </item>
       <item path="src/fish.cc" ex="false" tool="1" flavor2="8">
         <ccTool flags="1">
         </ccTool>
       </item>
-      <item path="src/fish_inst.cc" ex="false" tool="1" flavor2="0">
-      </item>
       <item path="src/fishbreeder.cc" ex="false" tool="1" flavor2="8">
         <ccTool flags="1">
         </ccTool>
-      </item>
-      <item path="src/fishdef.hh" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/input-configrange.cc" ex="false" tool="1" flavor2="8">
         <ccTool flags="1">
@@ -212,9 +205,9 @@
         <ccTool flags="1">
         </ccTool>
       </item>
-      <item path="src/link_def.hh" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="src/link_inst.cc" ex="false" tool="1" flavor2="0">
+      <item path="src/link-templates.cc" ex="false" tool="1" flavor2="8">
+        <ccTool flags="1">
+        </ccTool>
       </item>
       <item path="src/memory.cc" ex="false" tool="1" flavor2="8">
         <ccTool flags="1">
@@ -224,9 +217,9 @@
         <ccTool flags="1">
         </ccTool>
       </item>
-      <item path="src/network_inst.cc" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="src/networkdef.hh" ex="false" tool="3" flavor2="0">
+      <item path="src/network.cc" ex="false" tool="1" flavor2="8">
+        <ccTool flags="1">
+        </ccTool>
       </item>
       <item path="src/outcome.hh" ex="false" tool="3" flavor2="0">
       </item>
@@ -238,17 +231,17 @@
         <ccTool flags="1">
         </ccTool>
       </item>
+      <item path="src/rat-templates.cc" ex="false" tool="1" flavor2="8">
+        <ccTool flags="1">
+        </ccTool>
+      </item>
       <item path="src/rat.cc" ex="false" tool="1" flavor2="8">
         <ccTool flags="1">
         </ccTool>
       </item>
-      <item path="src/rat_inst.cc" ex="false" tool="1" flavor2="0">
-      </item>
       <item path="src/ratbreeder.cc" ex="false" tool="1" flavor2="8">
         <ccTool flags="1">
         </ccTool>
-      </item>
-      <item path="src/ratdef.hh" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/receiver.cc" ex="false" tool="1" flavor2="8">
         <ccTool flags="1">
@@ -274,13 +267,13 @@
         <ccTool flags="1">
         </ccTool>
       </item>
-      <item path="src/sendergang_inst.cc" ex="false" tool="1" flavor2="0">
+      <item path="src/sendergang.cc" ex="false" tool="1" flavor2="8">
+        <ccTool flags="1">
+        </ccTool>
       </item>
-      <item path="src/sendergangdef.hh" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="src/sendergangofgangs_inst.cc" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="src/sendergangofgangsdef.h" ex="false" tool="3" flavor2="0">
+      <item path="src/sendergangofgangs.cc" ex="false" tool="1" flavor2="8">
+        <ccTool flags="1">
+        </ccTool>
       </item>
       <item path="src/simulationresults.cc" ex="false" tool="1" flavor2="8">
         <ccTool flags="1">
